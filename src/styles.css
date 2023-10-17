@@ -2,29 +2,36 @@
   --lightPurple: rgb(233, 216, 238);
   --white: rgb(255, 255, 255);
   --darkerHover: rgb(244, 161, 206);
-  --darkPurple: rgb(158, 116, 170);
+  --darkPurple: rgba(158, 116, 170, 0.8);
 }
 * {
   margin: 0;
+  padding: 0;
   font-family: Quicksand;
 }
 body {
   background-color: var(--lightPurple);
 }
+
 header {
   height: 5rem;
   background-color: var(--darkPurple);
   width: 100%;
-  color: var(--lightPurple);
+  color: white;
   font-weight: bolder;
   font-size: 1rem;
+  box-shadow: 3px 3px 3px rgb(158, 116, 170, 0.5);
 }
 nav {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 5rem;
-  gap: 5rem;
+  gap: 2rem;
+}
+.Divider {
+  font-size: 1.5rem;
+  color: var(--lightPurple);
 }
 .ToggleViewBTN {
   position: absolute;
@@ -35,7 +42,7 @@ nav {
   border-top: 0.7px solid rgb(67, 14, 81, 0.5);
   border-radius: 60px 0 60px 0;
   transform: rotate(50deg);
-  margin: 0.5rem;
+  margin: 0.4rem;
 }
 .EyeCont {
   height: 35px;
@@ -49,8 +56,8 @@ nav {
   justify-content: center;
   align-items: center;
   transform: rotate(181deg);
-  margin-left: 7.5px;
-  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-bottom: 2px;
   overflow: hidden;
   border: 0.2px solid rgb(67, 14, 81, 0.2);
 }

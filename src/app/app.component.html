@@ -1,5 +1,5 @@
 <header>
-  <button class="ToggleViewBTN">
+  <button class="ToggleViewBTN" (click)="toggleElement()">
     <div class="EyeCont">
       <div class="BigRound">
         <div class="LittleRound"></div>
@@ -8,10 +8,12 @@
   </button>
   <nav>
     <h2 class="CreatorName">Linnea's blog</h2>
+    <span class="Divider">|</span>
     <h2 class="CreatorName">About me</h2>
   </nav>
 </header>
 <main>
+  <app-creator-view *ngIf="showElement"></app-creator-view>
   <app-home-page></app-home-page>
 </main>
 

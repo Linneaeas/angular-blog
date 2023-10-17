@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CreatorViewComponent } from './Pages/HomePage/CreatorView/creator-view/creator-view.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-blog';
+  showElement: boolean = false;
+  
+  toggleElement() {
+    this.showElement = !this.showElement;
+  }
 }
