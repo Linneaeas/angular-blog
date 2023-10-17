@@ -1,0 +1,25 @@
+.HomePage {
+  display: flex;
+  justify-content: center;
+}
+.OnePost {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  box-shadow: 3px 3px 3px 3px rgb(158, 116, 170, 0.5);
+}
+.OnePost:hover {
+  cursor: pointer;
+  scale: 102%;
+  box-shadow: 5px 5px 5px 5px rgb(158, 116, 170, 0.5);
+}
+.PostTitle {
+  color: rgb(129, 86, 141);
+}
+.PostPic {
+  height: 200px;
+}

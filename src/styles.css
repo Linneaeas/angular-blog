@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --lightPurple: rgb(233, 216, 238);
+  --white: rgb(255, 255, 255);
+  --darkerHover: rgb(244, 161, 206);
+  --darkPurple: rgb(158, 116, 170);
+}
+* {
+  margin: 0;
+  font-family: Quicksand;
+}
+body {
+  background-color: var(--lightPurple);
+}
+header {
+  height: 5rem;
+  background-color: var(--darkPurple);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--lightPurple);
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
