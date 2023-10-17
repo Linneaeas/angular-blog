@@ -13,7 +13,7 @@
   </nav>
 </header>
 <main>
-  <app-creator-view *ngIf="showElement"></app-creator-view>
+  <app-creator-view *ngIf="currentView === viewType.Creator"></app-creator-view>
   <app-home-page></app-home-page>
 </main>
 

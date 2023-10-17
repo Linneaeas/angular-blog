@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CreatorViewComponent } from './Pages/HomePage/CreatorView/creator-view/creator-view.component';
+import { ViewStateService, ViewType } from './Services/view-state.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,20 @@ import { CreatorViewComponent } from './Pages/HomePage/CreatorView/creator-view/
 })
 export class AppComponent {
   title = 'angular-blog';
-  showElement: boolean = false;
+  currentView: ViewType;
+
   
-  toggleElement() {
-    this.showElement = !this.showElement;
+  constructor(private viewStateService: ViewStateService) {
+    this.currentView = this.viewStateService.getCurrentView();
   }
+
+  toggleElement() {
+    this.currentView = this.currentView === ViewType.Creator ? ViewType.User : ViewType.Creator;
+    this.viewStateService.setCurrentView(this.currentView);
+  }
+
+  get viewType() {
+    return ViewType;
+  }
+  
 }
