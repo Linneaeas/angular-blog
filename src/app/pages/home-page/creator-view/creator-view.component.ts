@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { ViewStateService, ViewType } from 'src/app/Services/view-state.service';
+import { ViewStateService, ViewType } from "../../../services/view-state.service";
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  selector: 'app-creator-view',
+  templateUrl: './creator-view.component.html',
+  styleUrls: ['./creator-view.component.css']
 })
-export class HomePageComponent {
+export class CreatorViewComponent {
   currentView: ViewType;
 
   constructor(private viewStateService: ViewStateService) {

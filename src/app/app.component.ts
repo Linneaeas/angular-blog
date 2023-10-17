@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ViewStateService, ViewType } from './Services/view-state.service';
+import { ViewStateService, ViewType } from "./services/view-state.service";
 
 @Component({
   selector: 'app-root',
