@@ -1,5 +1,9 @@
 <header>
-  <button class="ToggleViewBTN" (click)="toggleView()">
+  <button
+    [style.backgroundColor]="currentView === 'user' ? 'blue' : 'red'"
+    class="ToggleViewBTN"
+    (click)="toggleView()"
+  >
     <div class="EyeCont">
       <div class="BigRound">
         <div class="LittleRound"></div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ViewStateService, ViewType } from '../../view-state.service';
+import { ViewStateService, ViewType } from 'src/app/view-state.service';
 
 
 @Component({
@@ -7,7 +7,7 @@ import { ViewStateService, ViewType } from '../../view-state.service';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
-export class HomePageComponent {
+export class HomePageComponent  {
   currentView: ViewType;
   Creator = ViewType.Creator; 
   User = ViewType.User;  
@@ -15,10 +15,12 @@ export class HomePageComponent {
   constructor(private viewStateService: ViewStateService) {
     this.currentView = this.viewStateService.getCurrentView();
   }
+  
   toggleView() {
     this.currentView = this.currentView === ViewType.Creator ? ViewType.User : ViewType.Creator;
     this.viewStateService.setCurrentView(this.currentView);
   }
+
   
   get viewType() {
     return this.viewStateService.getCurrentView();

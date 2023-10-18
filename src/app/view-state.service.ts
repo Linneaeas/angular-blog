@@ -10,7 +10,7 @@ export enum ViewType {
 })
 
 export class ViewStateService {
-  private currentView: ViewType = ViewType.User;
+  public currentView: ViewType = ViewType.User;
   
 
   getCurrentView(): ViewType {
