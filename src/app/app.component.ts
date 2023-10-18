@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ViewStateService, ViewType } from "./services/view-state.service";
+import { OnInit } from '@angular/core';
+import { ViewStateService, ViewType } from "./view-state.service";
 
 @Component({
   selector: 'app-root',
@@ -15,11 +16,16 @@ export class AppComponent {
     this.currentView = this.viewStateService.getCurrentView();
   }
 
-  toggleElement() {
+  toggleView() {
     this.currentView = this.currentView === ViewType.Creator ? ViewType.User : ViewType.Creator;
     this.viewStateService.setCurrentView(this.currentView);
   }
-
+  
+  ngOnInit() {
+    this.viewStateService.setCurrentView(this.viewStateService.getCurrentView());
+    this.currentView = this.viewStateService.getCurrentView();
+  }
+  
   get viewType() {
     return ViewType;
   }

@@ -4,14 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { CreatorViewComponent } from "./pages/home-page/creator-view/creator-view.component";
+import { AboutMeComponent } from './pages/about-me/about-me.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    CreatorViewComponent,
+    AboutMeComponent,
   
   ],
   imports: [

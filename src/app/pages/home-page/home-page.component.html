@@ -1,6 +1,19 @@
 <main class="HomePage">
-  <section class="OnePost">
-    <h3 class="PostTitle">A walk in the laveder field</h3>
-    <img class="PostPic" src="../../../assets/lavender-field.jpeg" />
-  </section>
+  <div class="NewPostBTNCont" *ngIf="currentView === viewType">
+    <button class="NewPostBTN">CREATE NEW POST</button>
+  </div>
+  <div class="PostsCont">
+    <section class="OnePost">
+      <h3 class="PostTitle">A walk in the laveder field</h3>
+      <img class="PostPic" src="../../../assets/lavender-field.jpeg" />
+    </section>
+    <section class="OnePost">
+      <h3 class="PostTitle">A walk in the laveder field</h3>
+      <img class="PostPic" src="../../../assets/lavender-field.jpeg" />
+    </section>
+    <section class="OnePost">
+      <h3 class="PostTitle">A walk in the laveder field</h3>
+      <img class="PostPic" src="../../../assets/lavender-field.jpeg" />
+    </section>
+  </div>
 </main>

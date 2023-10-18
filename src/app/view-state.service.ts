@@ -11,6 +11,7 @@ export enum ViewType {
 
 export class ViewStateService {
   private currentView: ViewType = ViewType.User;
+  
 
   getCurrentView(): ViewType {
     return this.currentView;
@@ -18,10 +19,6 @@ export class ViewStateService {
 
   setCurrentView(view: ViewType) {
     this.currentView = view;
-  }
-
-  getCreatorView(): ViewType {
-    return ViewType.Creator;
   }
   
   constructor() { }

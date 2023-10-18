@@ -1,6 +1,15 @@
 .HomePage {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+.PostsCont {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
 }
 .OnePost {
   display: flex;
@@ -23,4 +32,24 @@
 }
 .PostPic {
   height: 200px;
+}
+.NewPostBTNCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.NewPostBTN {
+  background: transparent;
+  border: none;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  box-shadow: 2px 2px 2px 2px rgb(158, 116, 170, 0.5);
+  border-radius: 15px;
+  color: rgb(129, 86, 141);
+  font-weight: bolder;
+}
+.NewPostBTN:hover {
+  cursor: pointer;
+  scale: 105%;
+  box-shadow: 3px 3px 3px 3px rgb(158, 116, 170, 0.5);
 }

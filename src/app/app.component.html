@@ -1,5 +1,5 @@
 <header>
-  <button class="ToggleViewBTN" (click)="toggleElement()">
+  <button class="ToggleViewBTN" (click)="toggleView()">
     <div class="EyeCont">
       <div class="BigRound">
         <div class="LittleRound"></div>
@@ -7,14 +7,28 @@
     </div>
   </button>
   <nav>
-    <h2 class="CreatorName">Linnea's blog</h2>
-    <span class="Divider">|</span>
-    <h2 class="CreatorName">About me</h2>
+    <ul>
+      <li>
+        <a
+          routerLink="/Home"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/About"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+        >
+          About
+        </a>
+      </li>
+    </ul>
   </nav>
 </header>
-<main>
-  <app-creator-view *ngIf="currentView === viewType.Creator"></app-creator-view>
-  <app-home-page></app-home-page>
-</main>
+<main></main>
 
 <router-outlet></router-outlet>
