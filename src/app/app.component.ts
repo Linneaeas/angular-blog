@@ -24,6 +24,11 @@ export class AppComponent implements OnInit {
     this.viewStateService.setCurrentView(this.viewStateService.getCurrentView());
     this.currentView = this.viewStateService.getCurrentView();
   }
+
+  getViewButtonText(): string {
+    return this.currentView === 'user' ? 'User' : 'Creator';
+  }
+  
   
   get viewType() {
     return ViewType;

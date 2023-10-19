@@ -1,15 +1,14 @@
 <header>
-  <button
-    [style.backgroundColor]="currentView === 'user' ? 'blue' : 'red'"
-    class="ToggleViewBTN"
-    (click)="toggleView()"
-  >
-    <div class="EyeCont">
-      <div class="BigRound">
-        <div class="LittleRound"></div>
+  <div class="ViewBTNContainer">
+    <div class="CurrentView">{{ getViewButtonText() }}</div>
+    <button class="ToggleViewBTN" (click)="toggleView()">
+      <div class="EyeCont">
+        <div class="BigRound">
+          <div class="LittleRound"></div>
+        </div>
       </div>
-    </div>
-  </button>
+    </button>
+  </div>
   <nav>
     <ul>
       <li>
@@ -18,16 +17,19 @@
           routerLinkActive="active"
           ariaCurrentWhenActive="page"
         >
-          Home
+          HOME
         </a>
       </li>
+
+      <span class="Divider">|</span>
+
       <li>
         <a
           routerLink="/About"
           routerLinkActive="active"
           ariaCurrentWhenActive="page"
         >
-          About
+          ABOUT
         </a>
       </li>
     </ul>

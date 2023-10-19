@@ -22,19 +22,42 @@ header {
   font-size: 1rem;
   box-shadow: 3px 3px 3px rgb(158, 116, 170, 0.5);
 }
+
 nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   height: 5rem;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+a:hover {
+  color: var(--lightPurple);
 }
 .Divider {
   font-size: 1.5rem;
   color: var(--lightPurple);
 }
-.ToggleViewBTN {
+.ViewBTNContainer {
   position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.ToggleViewBTN {
   height: 45px;
   width: 55px;
   background: transparent;
@@ -42,7 +65,6 @@ nav {
   border-top: 0.7px solid rgb(67, 14, 81, 0.5);
   border-radius: 60px 0 60px 0;
   transform: rotate(50deg);
-  margin: 0.4rem;
 }
 .EyeCont {
   height: 35px;
@@ -51,7 +73,7 @@ nav {
   border: none;
   color: var(--lightPurple);
   box-shadow: -1px 2px 4px rgb(67, 14, 81, 0.5);
-  border-radius: 50px 0 50px 0;
+  border-radius: 60px 0 60px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,9 +102,11 @@ nav {
   aspect-ratio: 1;
   border-radius: 100%;
   box-shadow: 3px 3px 3px rgb(67, 14, 81, 0.6) inset;
-  transform: rotate(0deg);
 }
 .ToggleViewBTN:hover {
   cursor: pointer;
   scale: 110%;
+}
+.CurrentView {
+  color: rgb(140, 99, 152);
 }
