@@ -9,8 +9,10 @@
     </div>
   </div>
   <div class="FormCont">
-    <h4>Contact me here!</h4>
-    <form class="FormFields">
+    <button class="ContactMeBTN" (click)="showFormFields = !showFormFields">
+      Contact me here!
+    </button>
+    <form *ngIf="showFormFields" class="FormFields">
       <div class="LineOne">
         <input
           type="text"

@@ -26,10 +26,16 @@
 .AboutPic {
   height: 300px;
 }
-.FormCont > h4 {
+.ContactMeBTN {
   text-shadow: 2px 2px 3px rgba(158, 116, 170, 0.8);
   color: rgb(129, 86, 141);
   font-size: 1.2rem;
+  background: none;
+  border: none;
+}
+.ContactMeBTN:hover {
+  cursor: pointer;
+  scale: 110%;
 }
 .FormCont {
   display: flex;
