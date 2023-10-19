@@ -6,8 +6,8 @@
 .Welcome {
   display: flex;
   justify-content: center;
-  color: var(--darkPurple);
-  text-shadow: 2px 2px 3px;
+  text-shadow: 2px 2px 3px rgba(158, 116, 170, 0.8);
+  color: rgb(129, 86, 141);
   font-size: 1.5rem;
   margin-top: 1.5rem;
   margin-bottom: 1rem;

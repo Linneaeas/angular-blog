@@ -1,0 +1,27 @@
+.AboutPage {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+.AboutPage > h3 {
+  text-shadow: 2px 2px 3px rgba(158, 116, 170, 0.8);
+  color: rgb(129, 86, 141);
+  font-size: 1.5rem;
+}
+.AboutCont {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  color: rgb(129, 86, 141);
+  box-shadow: 3px 3px 3px 3px rgb(158, 116, 170, 0.5);
+  border-radius: 15px;
+  margin-top: 1rem;
+  width: fit-content;
+}
+
+.AboutPic {
+  height: 300px;
+}
