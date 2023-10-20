@@ -11,6 +11,8 @@ postTitle: string = '';
 postBody: string = '';
 postTags: string = '';
 postPic: File | null = null; 
+imageUrl: string = ''; 
+
 
 constructor(private localStorageService: LocalStorageService) {}
 
@@ -22,17 +24,28 @@ savePostToLocalStorage(postData: any) {
 handleFileInput(event: any) {
   const files: FileList = event.target.files;
   if (files.length > 0) {
-    this.postPic = files[0]; 
+    this.postPic = files[0];
+    this.imageUrl = URL.createObjectURL(this.postPic); 
   }
 }
 getImageUrl() {
-  if (this.postPic) {
-    return URL.createObjectURL(this.postPic);
-  }
-  return ''; 
+  return this.imageUrl; 
 }
 
 onSubmit() {
+  const imageUrl = this.postPic ? URL.createObjectURL(this.postPic) : '';
+
+  const newPost = {
+    postTitle: this.postTitle,
+    postBody: this.postBody,
+    postTags: this.postTags,
+    postPic: this.imageUrl,
+  };
+  let posts: any[] = this.localStorageService.get('posts') || [];
+  posts.push(newPost);
+
+  this.localStorageService.set('posts', posts);
+
   const formData = new FormData();
   formData.append('postTitle', this.postTitle);
   formData.append('postBody', this.postBody);
@@ -43,6 +56,7 @@ onSubmit() {
   this.postBody='';
   this.postTags='';
   this.postPic=null;
+  this.imageUrl = '';
 }
 
 }

@@ -8,17 +8,9 @@
   </button>
   <h1 class="BlogName">Baxter's blog</h1>
   <div class="PostsCont">
-    <section class="OnePost">
-      <h3 class="PostTitle">A walk in the laveder field</h3>
-      <img class="PostPic" src="../../../assets/lavender-field.jpeg" />
-    </section>
-    <section class="OnePost">
-      <h3 class="PostTitle">A walk in the laveder field</h3>
-      <img class="PostPic" src="../../../assets/lavender-field.jpeg" />
-    </section>
-    <section class="OnePost">
-      <h3 class="PostTitle">A walk in the laveder field</h3>
-      <img class="PostPic" src="../../../assets/lavender-field.jpeg" />
+    <section class="OnePost" *ngFor="let post of posts">
+      <h3 class="PostTitle">{{ post.postTitle }}</h3>
+      <img class="PostPic" [src]="post.postPic" />
     </section>
   </div>
 </main>
