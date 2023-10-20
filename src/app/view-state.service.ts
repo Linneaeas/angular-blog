@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 export enum ViewType {
   Creator = 'creator',
@@ -10,16 +11,16 @@ export enum ViewType {
 })
 
 export class ViewStateService {
-  public currentView: ViewType = ViewType.User;
-  
+  private currentViewSubject = new BehaviorSubject<ViewType>(ViewType.User);
+  currentView$: Observable<ViewType> = this.currentViewSubject.asObservable();
 
   getCurrentView(): ViewType {
-    return this.currentView;
+    return this.currentViewSubject.value;
   }
 
   setCurrentView(view: ViewType) {
-    this.currentView = view;
+    this.currentViewSubject.next(view);
   }
-  
-  constructor() { }
+
+  constructor() {}
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { ViewStateService, ViewType } from './view-state.service';
 import { ThemeService } from './theme.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,14 @@ import { ThemeService } from './theme.service';
 })
 export class AppComponent implements OnInit {
   title = 'angular-blog';
-  currentView: ViewType;
+  currentView!: ViewType;
   currentTheme: string = 'Grape';
 
   
   constructor(private viewStateService: ViewStateService, private themeService: ThemeService) {
-    this.currentView = this.viewStateService.getCurrentView();
+    this.viewStateService.currentView$.subscribe(view => {
+      this.currentView = view;
+    });
   }
 
   toggleView() {
