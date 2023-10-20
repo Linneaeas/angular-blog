@@ -1,1 +1,40 @@
-<p>create-post works!</p>
+<main class="CreateNewPost">
+  <h1 class="AboutTitle">Create new post</h1>
+  <div class="NewPostCont">
+    <form class="NewPostForm">
+      <input
+        class="SmallInput"
+        type="text"
+        id="postTitle"
+        name="postTitle"
+        placeholder="Title"
+      />
+
+      <textarea
+        class="BigTextarea"
+        id="postBody"
+        name="postBody"
+        placeholder="Your post"
+      ></textarea>
+      <input
+        class="SmallInput"
+        type="text"
+        id="tags"
+        name="tags"
+        placeholder="Tags"
+      />
+      <label class="FileInput">
+        <input
+          class="Hidden"
+          type="file"
+          id="postPic"
+          name="postPic"
+          accept="image/*"
+        />
+        <span>IMG</span>
+      </label>
+
+      <button class="PostBTN">POST</button>
+    </form>
+  </div>
+</main>

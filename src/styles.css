@@ -66,7 +66,8 @@ input[type="submit"]:hover {
 
 /*INPUTS & TEXTAREAS*/
 input,
-textarea {
+textarea,
+label {
   background: none;
   border: none;
   border-radius: 20px;
@@ -74,7 +75,8 @@ textarea {
   color: black;
 }
 input:hover,
-textarea:hover {
+textarea:hover,
+label:hover {
   cursor: pointer;
   scale: 110%;
 }
@@ -87,6 +89,12 @@ textarea:hover {
 .SmallTextarea {
   height: 5rem;
   width: 10rem;
+  background: var(--boxShadow);
+  padding: 0.3rem;
+}
+.BigTextarea {
+  height: 15rem;
+  width: 15rem;
   background: var(--boxShadow);
   padding: 0.3rem;
 }
