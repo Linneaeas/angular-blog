@@ -16,6 +16,7 @@
           id="firstName"
           name="firstname"
           placeholder="First name"
+          [(ngModel)]="firstName"
         />
         <input
           class="SmallInput"
@@ -23,13 +24,15 @@
           id="lastName"
           name="lastname"
           placeholder="Last name"
+          [(ngModel)]="lastName"
         />
         <input
           class="SmallInput"
           type="email"
-          id="contact"
-          name="contact"
+          id="email"
+          name="email"
           placeholder="Email"
+          [(ngModel)]="email"
         />
       </div>
       <div class="Column">
@@ -38,8 +41,16 @@
           id="message"
           name="message"
           placeholder="Your message.."
+          [(ngModel)]="message"
         ></textarea>
-        <input class="SendBTN" type="submit" value="SEND" />
+        <input
+          class="SendBTN"
+          type="submit"
+          name="send"
+          id="send"
+          value="SEND"
+          (click)="onSubmit()"
+        />
       </div>
     </form>
   </div>
