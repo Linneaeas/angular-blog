@@ -1,0 +1,93 @@
+header {
+  height: 5rem;
+  background-color: var(--primaryDark);
+  width: 100%;
+  color: white;
+  font-weight: bolder;
+  font-size: 1rem;
+  box-shadow: 3px 3px 3px var(--boxShadow);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 5rem;
+}
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+a:hover {
+  color: var(--primaryLight);
+}
+.Divider {
+  font-size: 1.5rem;
+  color: var(--primaryLight);
+}
+.ViewBTNContainer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.ToggleViewBTN {
+  height: 45px;
+  width: 55px;
+  background: transparent;
+  border: none;
+  border-top: 0.7px solid rgb(67, 14, 81, 0.5);
+  border-radius: 60px 0 60px 0;
+  transform: rotate(50deg);
+}
+.EyeCont {
+  height: 35px;
+  width: 40px;
+  background: rgba(173, 134, 185, 0.1);
+  border: none;
+  color: var(--lightPurple);
+  box-shadow: -1px 2px 4px rgb(67, 14, 81, 0.5);
+  border-radius: 60px 0 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(181deg);
+  margin-left: 10px;
+  margin-bottom: 2px;
+  overflow: hidden;
+  border: 0.2px solid rgb(67, 14, 81, 0.2);
+}
+.BigRound {
+  background: rgb(140, 99, 152, 0.5);
+  height: 85%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 5px rgb(67, 14, 81, 0.3) inset;
+  transform: rotate(-20deg);
+  margin-right: 1px;
+  margin-top: 4px;
+}
+.LittleRound {
+  background: rgba(67, 14, 81, 0.4);
+  height: 40%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  box-shadow: 3px 3px 3px rgb(67, 14, 81, 0.6) inset;
+}
+
+.CurrentView {
+  color: rgb(140, 99, 152);
+}

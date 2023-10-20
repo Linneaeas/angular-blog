@@ -1,100 +1,39 @@
-.AboutPage {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 1rem;
-}
-.AboutPage > h3 {
-  text-shadow: 2px 2px 3px rgba(158, 116, 170, 0.8);
-  color: rgb(129, 86, 141);
-  font-size: 2rem;
-}
-
 .AboutCont {
   display: flex;
   justify-content: center;
   gap: 1rem;
   padding: 1.5rem;
-  color: rgb(129, 86, 141);
-  box-shadow: 3px 3px 3px 3px rgb(158, 116, 170, 0.5);
+  box-shadow: 3px 3px 3px 3px var(--boxShadow);
   border-radius: 15px;
-  margin-top: 1rem;
-  width: fit-content;
 }
-
 .AboutPic {
   height: 300px;
-}
-.ContactMeBTN {
-  text-shadow: 2px 2px 3px rgba(158, 116, 170, 0.8);
-  color: rgb(129, 86, 141);
-  font-size: 1.2rem;
-  background: none;
-  border: none;
-}
-.ContactMeBTN:hover {
-  cursor: pointer;
-  scale: 110%;
 }
 .FormCont {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 3px 3px 3px 3px rgb(158, 116, 170, 0.5);
-  border-radius: 15px;
   margin-top: 2.5rem;
-  padding: 1rem;
+  margin-bottom: 3rem;
 }
 .FormFields {
+  box-shadow: 3px 3px 3px 3px var(--boxShadow);
+  border-radius: 15px;
   margin-top: 1rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
+  padding: 1rem;
 }
-input[type="text"],
-input[type="email"] {
-  background: rgba(158, 116, 170, 0.3);
-  border: none;
-  border-radius: 15px;
-  height: 1.5rem;
-  width: 8rem;
-  padding: 0.1rem;
-}
-input[type="submit"] {
-  background: rgba(158, 116, 170, 0.8);
-  border: none;
-  border-radius: 15px;
-  width: fit-content;
-  height: 2rem;
-  padding: 0.5rem;
-  box-shadow: 3px 3px 3px 3px rgb(158, 116, 170, 0.5);
-  color: rgb(233, 216, 238);
-  font-weight: bolder;
-}
-textarea {
-  background: rgba(158, 116, 170, 0.3);
-  border: none;
-  border-radius: 15px;
-  height: 6rem;
-  width: 10rem;
-  padding: 0.3rem;
-}
-
-input:hover,
-textarea:hover {
-  cursor: pointer;
-  scale: 105%;
-}
-.LineOne {
+.Column {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
-.LineTwo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+.SendBTN {
+  background: var(--primaryDark);
+  color: white;
 }

@@ -1,112 +1,78 @@
 :root {
-  --lightPurple: rgb(233, 216, 238);
-  --white: rgb(255, 255, 255);
-  --darkerHover: rgb(244, 161, 206);
-  --darkPurple: rgba(158, 116, 170, 0.8);
+  --primaryLight: rgb(233, 216, 238);
+  --primaryDark: rgb(150, 95, 145);
+  --boxShadow: rgba(150, 95, 145, 0.3);
+  --fontShadow: rgba(150, 95, 145, 0.5);
 }
 * {
   margin: 0;
   padding: 0;
   font-family: Quicksand;
+  color: var(--primaryDark);
 }
 body {
-  background-color: var(--lightPurple);
+  background-color: var(--primaryLight);
 }
-
-header {
-  height: 5rem;
-  background-color: var(--darkPurple);
-  width: 100%;
-  color: white;
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+h1 {
+  text-shadow: 3px 3px 4px var(--fontShadow);
+  font-size: 1.5rem;
+}
+h3 {
+  text-shadow: 3px 3px 3px var(--fontShadow);
+}
+.BodyText {
+  color: black;
+}
+/*BUTTONS*/
+button,
+input[type="submit"] {
+  background: none;
+  border: none;
+  border-radius: 20px;
   font-weight: bolder;
   font-size: 1rem;
-  box-shadow: 3px 3px 3px rgb(158, 116, 170, 0.5);
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 5rem;
-}
-
-ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-}
-a {
-  text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
-}
-a:hover {
-  color: var(--lightPurple);
-}
-.Divider {
-  font-size: 1.5rem;
-  color: var(--lightPurple);
-}
-.ViewBTNContainer {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   padding: 0.5rem;
+  box-shadow: 2px 2px 2px 2px var(--boxShadow);
+  width: fit-content;
 }
-.ToggleViewBTN {
-  height: 45px;
-  width: 55px;
-  background: transparent;
+button:hover,
+input[type="submit"]:hover {
+  cursor: pointer;
+  scale: 110%;
+  box-shadow: 3px 3px 3px 3px var(--boxShadow);
+}
+
+/*INPUTS & TEXTAREAS*/
+input,
+textarea {
+  background: none;
   border: none;
-  border-top: 0.7px solid rgb(67, 14, 81, 0.5);
-  border-radius: 60px 0 60px 0;
-  transform: rotate(50deg);
+  border-radius: 20px;
+  font-weight: bolder;
+  color: black;
 }
-.EyeCont {
-  height: 35px;
-  width: 40px;
-  background: rgba(173, 134, 185, 0.1);
-  border: none;
-  color: var(--lightPurple);
-  box-shadow: -1px 2px 4px rgb(67, 14, 81, 0.5);
-  border-radius: 60px 0 60px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: rotate(181deg);
-  margin-left: 10px;
-  margin-bottom: 2px;
-  overflow: hidden;
-  border: 0.2px solid rgb(67, 14, 81, 0.2);
-}
-.BigRound {
-  background: rgb(140, 99, 152, 0.5);
-  height: 85%;
-  aspect-ratio: 1;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 5px 5px 5px rgb(67, 14, 81, 0.3) inset;
-  transform: rotate(-20deg);
-  margin-right: 1px;
-  margin-top: 4px;
-}
-.LittleRound {
-  background: rgba(67, 14, 81, 0.4);
-  height: 40%;
-  aspect-ratio: 1;
-  border-radius: 100%;
-  box-shadow: 3px 3px 3px rgb(67, 14, 81, 0.6) inset;
-}
-.ToggleViewBTN:hover {
+input:hover,
+textarea:hover {
   cursor: pointer;
   scale: 110%;
 }
-.CurrentView {
-  color: rgb(140, 99, 152);
+.SmallInput {
+  height: 1.5rem;
+  width: 8rem;
+  background: var(--boxShadow);
+  padding: 0.3rem;
+}
+.SmallTextarea {
+  height: 5rem;
+  width: 10rem;
+  background: var(--boxShadow);
+  padding: 0.3rem;
 }

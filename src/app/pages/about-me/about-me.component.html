@@ -1,42 +1,45 @@
 <main class="AboutPage">
-  <h3 class="AboutTitle">Baxter Sjoberg</h3>
+  <h1 class="AboutTitle">Baxter Sjoberg</h1>
   <div class="AboutCont">
-    <div class="AboutPicCont">
-      <img class="AboutPic" src="../../../assets/baxi.png" />
-    </div>
-    <div class="AboutTextCont">
-      <p class="AboutText">My name is Baxter, i'm 5 yo.</p>
-    </div>
+    <img class="AboutPic" src="../../../assets/baxi.png" />
+    <p class="BodyText">My name is Baxter, i'm 5 yo.</p>
   </div>
   <div class="FormCont">
     <button class="ContactMeBTN" (click)="showFormFields = !showFormFields">
-      Contact me here!
+      CONTACT ME HERE
     </button>
     <form *ngIf="showFormFields" class="FormFields">
-      <div class="LineOne">
+      <div class="Column">
         <input
+          class="SmallInput"
           type="text"
           id="firstName"
           name="firstname"
           placeholder="First name"
         />
-
         <input
+          class="SmallInput"
           type="text"
           id="lastName"
           name="lastname"
           placeholder="Last name"
         />
-        <input type="email" id="contact" name="contact" placeholder="Email" />
+        <input
+          class="SmallInput"
+          type="email"
+          id="contact"
+          name="contact"
+          placeholder="Email"
+        />
       </div>
-
-      <div class="LineTwo">
+      <div class="Column">
         <textarea
+          class="SmallTextarea"
           id="message"
           name="message"
           placeholder="Your message.."
         ></textarea>
-        <input type="submit" value="SEND" />
+        <input class="SendBTN" type="submit" value="SEND" />
       </div>
     </form>
   </div>

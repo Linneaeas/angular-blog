@@ -1,17 +1,3 @@
-.HomePage {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.Welcome {
-  display: flex;
-  justify-content: center;
-  text-shadow: 2px 2px 3px rgba(158, 116, 170, 0.8);
-  color: rgb(129, 86, 141);
-  font-size: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
 .PostsCont {
   display: flex;
   justify-content: center;
@@ -22,42 +8,18 @@
 .OnePost {
   display: flex;
   justify-content: center;
-  gap: 1rem;
   align-items: center;
   flex-direction: column;
-  margin-top: 1rem;
+  gap: 1rem;
   padding: 1.5rem;
-  box-shadow: 3px 3px 3px 3px rgb(158, 116, 170, 0.5);
+  box-shadow: 3px 3px 3px 3px var(--boxShadow);
   border-radius: 15px;
 }
 .OnePost:hover {
   cursor: pointer;
   scale: 102%;
-  box-shadow: 5px 5px 5px 5px rgb(158, 116, 170, 0.5);
-}
-.PostTitle {
-  color: rgb(129, 86, 141);
+  box-shadow: 5px 5px 5px 5px var(--boxShadow);
 }
 .PostPic {
   height: 200px;
-}
-.NewPostBTNCont {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.NewPostBTN {
-  background: transparent;
-  border: none;
-  margin-top: 2rem;
-  padding: 0.5rem;
-  box-shadow: 2px 2px 2px 2px rgb(158, 116, 170, 0.5);
-  border-radius: 15px;
-  color: rgb(129, 86, 141);
-  font-weight: bolder;
-}
-.NewPostBTN:hover {
-  cursor: pointer;
-  scale: 105%;
-  box-shadow: 3px 3px 3px 3px rgb(158, 116, 170, 0.5);
 }
