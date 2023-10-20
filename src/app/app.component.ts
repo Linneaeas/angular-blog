@@ -40,6 +40,9 @@ export class AppComponent implements OnInit {
   getViewButtonText(): string {
     return this.currentView === 'user' ? 'User' : 'Creator';
   }
+  getThemeButtonText(): string {
+    return this.currentTheme === 'Grape' ? 'Grape' : 'Ocean';
+  }
 
   
   get viewType() {

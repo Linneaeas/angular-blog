@@ -5,18 +5,18 @@
   --fontShadow: rgba(150, 95, 145, 0.5);
   --eyePrimary: rgb(85, 33, 71);
   --eyeColor: rgb(122, 61, 118);
-  --eyeShadow: rgb(103, 51, 100);
+  --eyeShadow: rgb(99, 45, 99);
   --eyeBorder: rgba(67, 26, 56, 0.5);
 }
 :root.Ocean {
-  --primaryLight: lightblue;
-  --primaryDark: darkblue;
-  --boxShadow: rgba(95, 102, 150, 0.3);
-  --fontShadow: rgba(99, 95, 150, 0.5);
+  --primaryLight: rgb(224, 222, 233);
+  --primaryDark: rgb(84, 114, 189);
+  --boxShadow: rgb(84, 114, 189, 0.3);
+  --fontShadow: rgb(84, 114, 189, 0.5);
   --eyePrimary: rgb(33, 37, 85);
-  --eyeColor: rgb(69, 61, 122);
-  --eyeShadow: rgb(51, 87, 103);
-  --eyeBorder: rgba(26, 46, 67, 0.5);
+  --eyeColor: rgb(53, 84, 169);
+  --eyeShadow: rgb(36, 56, 113);
+  --eyeBorder: rgb(27, 30, 69);
 }
 * {
   margin: 0;
@@ -37,7 +37,7 @@ main {
 }
 h1 {
   text-shadow: 3px 3px 4px var(--fontShadow);
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 h3 {
   text-shadow: 3px 3px 3px var(--fontShadow);
