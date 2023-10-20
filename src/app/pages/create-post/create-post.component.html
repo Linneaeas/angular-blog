@@ -8,6 +8,7 @@
         id="postTitle"
         name="postTitle"
         placeholder="Title"
+        [(ngModel)]="postTitle"
       />
 
       <textarea
@@ -15,6 +16,7 @@
         id="postBody"
         name="postBody"
         placeholder="Your post"
+        [(ngModel)]="postBody"
       ></textarea>
       <input
         class="SmallInput"
@@ -22,6 +24,7 @@
         id="tags"
         name="tags"
         placeholder="Tags"
+        [(ngModel)]="postTags"
       />
       <label class="FileInput">
         <input
@@ -30,10 +33,17 @@
           id="postPic"
           name="postPic"
           accept="image/*"
+          [(ngModel)]="postPic"
+          (change)="handleFileInput($event)"
         />
         <span>IMG</span>
       </label>
-
+      <img
+        *ngIf="postPic"
+        [src]="getImageUrl()"
+        alt="Image Preview"
+        height="100"
+      />
       <button class="PostBTN">POST</button>
     </form>
   </div>
