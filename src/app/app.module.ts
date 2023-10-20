@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AboutMeComponent } from './pages/about-me/about-me.component';
+import { CreatePostComponent } from './pages/create-post/create-post.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { AboutMeComponent } from './pages/about-me/about-me.component';
     AppComponent,
     HomePageComponent,
     AboutMeComponent,
+    CreatePostComponent,
   
   ],
   imports: [

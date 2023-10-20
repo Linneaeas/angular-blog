@@ -1,6 +1,7 @@
 import { Component,  OnInit} from '@angular/core';
 import { ViewStateService, ViewType } from 'src/app/view-state.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class HomePageComponent implements OnInit {
   Creator = ViewType.Creator; 
   User = ViewType.User;  
 
-  constructor(private viewStateService: ViewStateService) {
+  constructor(private viewStateService: ViewStateService, private router: Router) {
     this.viewStateService.currentView$.subscribe(view => {
       this.currentView = view;
     });
@@ -27,9 +28,10 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
     this.viewStateService.setCurrentView(this.viewStateService.getCurrentView());
     this.currentView = this.viewStateService.getCurrentView();
-
   }
-
+  createNewPost() {
+    this.router.navigate(['/CreatePost']);
+  }
   get viewType() {
     return this.viewStateService.getCurrentView();
   }
