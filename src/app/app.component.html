@@ -1,15 +1,14 @@
 <header>
-  <div class="ViewBTNContainer">
-    <div class="CurrentView">{{ getViewButtonText() }}</div>
-    <button class="ToggleViewBTN" (click)="toggleView()">
-      <div class="EyeCont">
-        <div class="BigRound">
-          <div class="LittleRound"></div>
+  <nav>
+    <button class="ToggleBTN" (click)="toggleView()">
+      <div class="Current">{{ getViewButtonText() }}</div>
+      <div class="Eye View">
+        <div class="Round View">
+          <div class="Dot"></div>
         </div>
       </div>
     </button>
-  </div>
-  <nav>
+
     <ul>
       <li>
         <a
@@ -20,9 +19,7 @@
           HOME
         </a>
       </li>
-
       <span class="Divider">|</span>
-
       <li>
         <a
           routerLink="/About"
@@ -33,6 +30,15 @@
         </a>
       </li>
     </ul>
+
+    <button class="ToggleBTN" (click)="toggleTheme()">
+      <div class="Current"></div>
+      <div class="Eye Theme">
+        <div class="Round Theme">
+          <div class="Dot"></div>
+        </div>
+      </div>
+    </button>
   </nav>
 </header>
 <main></main>

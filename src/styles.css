@@ -1,8 +1,22 @@
-:root {
+:root.Grape {
   --primaryLight: rgb(233, 216, 238);
   --primaryDark: rgb(150, 95, 145);
   --boxShadow: rgba(150, 95, 145, 0.3);
   --fontShadow: rgba(150, 95, 145, 0.5);
+  --eyePrimary: rgb(85, 33, 71);
+  --eyeColor: rgb(122, 61, 118);
+  --eyeShadow: rgb(103, 51, 100);
+  --eyeBorder: rgba(67, 26, 56, 0.5);
+}
+:root.Ocean {
+  --primaryLight: lightblue;
+  --primaryDark: darkblue;
+  --boxShadow: rgba(95, 102, 150, 0.3);
+  --fontShadow: rgba(99, 95, 150, 0.5);
+  --eyePrimary: rgb(33, 37, 85);
+  --eyeColor: rgb(69, 61, 122);
+  --eyeShadow: rgb(51, 87, 103);
+  --eyeBorder: rgba(26, 46, 67, 0.5);
 }
 * {
   margin: 0;

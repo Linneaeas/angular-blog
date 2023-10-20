@@ -7,12 +7,10 @@ header {
   font-size: 1rem;
   box-shadow: 3px 3px 3px var(--boxShadow);
 }
-
 nav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
   height: 5rem;
 }
 ul {
@@ -20,7 +18,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 a {
   text-decoration: none;
@@ -34,60 +32,47 @@ a:hover {
   font-size: 1.5rem;
   color: var(--primaryLight);
 }
-.ViewBTNContainer {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 0.5rem;
+.ToggleBTN {
+  box-shadow: none;
 }
-.ToggleViewBTN {
-  height: 45px;
-  width: 55px;
-  background: transparent;
-  border: none;
-  border-top: 0.7px solid rgb(67, 14, 81, 0.5);
-  border-radius: 60px 0 60px 0;
-  transform: rotate(50deg);
-}
-.EyeCont {
-  height: 35px;
-  width: 40px;
-  background: rgba(173, 134, 185, 0.1);
-  border: none;
-  color: var(--lightPurple);
-  box-shadow: -1px 2px 4px rgb(67, 14, 81, 0.5);
-  border-radius: 60px 0 60px 0;
+.Eye {
+  height: 40px;
+  aspect-ratio: 1;
+  background: var(--eyePrimary);
+  border-radius: 25px 0 25px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: rotate(181deg);
-  margin-left: 10px;
-  margin-bottom: 2px;
-  overflow: hidden;
-  border: 0.2px solid rgb(67, 14, 81, 0.2);
 }
-.BigRound {
-  background: rgb(140, 99, 152, 0.5);
-  height: 85%;
+.Eye.View {
+  transform: rotate(65deg);
+}
+.Eye.Theme {
+  transform: rotate(26deg);
+}
+.Round {
+  background: var(--eyeColor);
+  height: 30px;
   aspect-ratio: 1;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 5px 5px 5px rgb(67, 14, 81, 0.3) inset;
+  box-shadow: 4px 4px var(--eyeShadow) inset;
+}
+.Round.View {
   transform: rotate(-20deg);
-  margin-right: 1px;
-  margin-top: 4px;
-}
-.LittleRound {
-  background: rgba(67, 14, 81, 0.4);
-  height: 40%;
-  aspect-ratio: 1;
-  border-radius: 100%;
-  box-shadow: 3px 3px 3px rgb(67, 14, 81, 0.6) inset;
 }
 
-.CurrentView {
-  color: rgb(140, 99, 152);
+.Dot {
+  background: var(--eyePrimary);
+  height: 9px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  border: 2px solid var(--eyeBorder);
+}
+
+.Current {
+  color: var(--eyePrimary);
+  font-size: 10px;
 }
