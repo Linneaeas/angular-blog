@@ -33,17 +33,12 @@
           id="postPic"
           name="postPic"
           accept="image/*"
-          [(ngModel)]="postPic"
           (change)="handleFileInput($event)"
         />
         <span>IMG</span>
       </label>
-      <img
-        *ngIf="postPic"
-        [src]="getImageUrl()"
-        alt="Image Preview"
-        height="100"
-      />
+      <img *ngIf="postPic" [src]="imageUrl" alt="Image Preview" height="100" />
+
       <button class="PostBTN" (click)="onSubmit(); $event.preventDefault()">
         POST
       </button>
