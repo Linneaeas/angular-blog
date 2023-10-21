@@ -1,8 +1,7 @@
 <main class="BlogPost">
-  <h1 class="BlogName">Baxter's blog</h1>
+  <h1 class="PostTitle">My post title</h1>
   <div class="BlogPostCont">
     <section class="BlogPostContent">
-      <h2 class="PostTitle">Title</h2>
       <div class="PicBodyTags">
         <img class="PostPic" src="../../../assets/baxi.png" />
         <div class="BodyTags">
@@ -27,40 +26,56 @@
     </section>
     <section class="Interactions">
       <div class="Reactions">
-        <button class="LikeBTN">Like</button><span class="NoOf">3likes</span>
-        <button class="DontLikeBTN">Don't Like</button
-        ><span class="NoOf">3 dislike</span>
+        <div class="React">
+          <button class="LikeBTN">
+            <div class="Heart One"></div>
+            <div class="Heart Two"></div>
+          </button>
+          <span class="NoOf Like">55</span>
+        </div>
+        <div class="React">
+          <button class="DontLikeBTN">X</button>
+          <span class="NoOf DontLike">3</span>
+        </div>
       </div>
       <div class="Comments">
         <div class="OneComment">
           <p class="Comment">This is a comment</p>
           <span class="CommentName">Prince</span>
         </div>
-      </div>
+        <div class="OneComment">
+          <p class="Comment">Anotheeeer comment</p>
+          <span class="CommentName">Zimba</span>
+        </div>
+        <div class="OneComment">
+          <p class="Comment">A third one!!</p>
+          <span class="CommentName">Svullo</span>
+        </div>
 
-      <form class="NewComment">
-        <input
-          class="BiggerInput"
-          type="text"
-          id="comment"
-          name="comment"
-          placeholder="Comment.."
-        />
-        <input
-          class="SmallInput"
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Name.."
-        />
-        <input
-          class="AddCommentBTN"
-          type="submit"
-          name="addComment"
-          id="addComment"
-          value="Add"
-        />
-      </form>
+        <form class="NewComment">
+          <input
+            class="BiggerInput"
+            type="text"
+            id="comment"
+            name="comment"
+            placeholder="Comment.."
+          />
+          <input
+            class="XSInput"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name.."
+          />
+          <input
+            class="AddCommentBTN"
+            type="submit"
+            name="addComment"
+            id="addComment"
+            value="+"
+          />
+        </form>
+      </div>
     </section>
   </div>
 </main>
