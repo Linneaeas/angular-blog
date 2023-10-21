@@ -35,6 +35,9 @@ export class HomePageComponent implements OnInit {
   createNewPost() {
     this.router.navigate(['/CreatePost']);
   }
+  blogPost() {
+    this.router.navigate(['/BlogPost']);
+  }
   get viewType() {
     return this.viewStateService.getCurrentView();
   }

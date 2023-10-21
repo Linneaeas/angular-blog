@@ -1,0 +1,58 @@
+.BlogPostCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.BlogPostContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  box-shadow: 3px 3px 3px 3px var(--boxShadow);
+  border-radius: 15px;
+}
+.PicBodyTags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: fit-content;
+}
+.PostPic {
+  max-width: 20rem;
+  object-fit: contain;
+}
+.BodyTags {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 20rem;
+}
+.Interactions {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.OneComment {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.Comment {
+  box-shadow: 1px 1px 1px 1px var(--boxShadow);
+  border-radius: 20px;
+  padding: 0.5rem;
+  width: fit-content;
+}
+.CommentName {
+  text-shadow: 1px 1px 2px var(--fontShadow);
+}
+.NewComment {
+  display: flex;
+  gap: 0.5rem;
+}

@@ -8,7 +8,7 @@
   </button>
   <h1 class="BlogName">Baxter's blog</h1>
   <div class="PostsCont">
-    <section class="OnePost" *ngFor="let post of posts">
+    <section class="OnePost" *ngFor="let post of posts" (click)="blogPost()">
       <h3 class="PostTitle">{{ post.postTitle }}</h3>
       <img class="PostPic" [src]="post.postPic" />
     </section>

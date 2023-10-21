@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AboutMeComponent } from './pages/about-me/about-me.component';
 import { CreatePostComponent } from './pages/create-post/create-post.component';
+import { BlogPostComponent } from './pages/blog-post/blog-post.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { CreatePostComponent } from './pages/create-post/create-post.component';
     HomePageComponent,
     AboutMeComponent,
     CreatePostComponent,
+    BlogPostComponent,
   
   ],
   imports: [

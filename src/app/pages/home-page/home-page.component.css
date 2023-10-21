@@ -22,4 +22,5 @@
 }
 .PostPic {
   height: 200px;
+  object-fit: contain;
 }
