@@ -3,6 +3,7 @@ import { ViewStateService, ViewType } from 'src/app/view-state.service';
 import { Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/local-storage.service';
 import { Post } from 'src/app/post';
+import { Creator } from 'src/app/creator';
 
 @Component({
   selector: 'app-home-page',
@@ -14,6 +15,12 @@ export class HomePageComponent implements OnInit {
   Creator = ViewType.Creator;
   User = ViewType.User;
   posts: Post[] = [];
+  creatorInfo: Creator = {
+    firstName: '',
+    lastName: '',
+    body: '',
+    imageUrl: ''
+  };
   
 
   constructor(
@@ -35,6 +42,10 @@ export class HomePageComponent implements OnInit {
     this.viewStateService.setCurrentView(this.viewStateService.getCurrentView());
     this.currentView = this.viewStateService.getCurrentView();
     this.posts = this.getSavedPostData() || [];
+    const storedCreatorData = this.localStorageService.get('creatorData');
+    if (storedCreatorData) {
+      this.creatorInfo = { ...storedCreatorData }; 
+    }
   }
 
   createNewPost() {

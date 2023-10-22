@@ -1,12 +1,12 @@
 <main class="AboutPage">
   <div class="AboutTitleCont">
-    <h1 class="AboutTitle" *ngIf="!showEditMode">
+    <h1 class="AboutTitle" *ngIf="!editNameFields">
       {{ creator.firstName }} {{ creator.lastName }}
     </h1>
     <button
       class="EditBTN Name"
-      *ngIf="currentView === Creator"
-      (click)="onEdit('firstName')"
+      *ngIf="currentView === Creator && !editNameFields"
+      (click)="onEditName()"
     >
       <div class="PenSide"></div>
       <div class="PenMid"></div>
@@ -16,10 +16,10 @@
       <div class="PenSmallLine"></div>
       <div class="PenTip"></div>
     </button>
-    <div *ngIf="showEditMode">
+    <div *ngIf="editNameFields" class="EditMode">
       <input class="SmallInput" type="text" [(ngModel)]="creator.firstName" />
       <input class="SmallInput" type="text" [(ngModel)]="creator.lastName" />
-      <button (click)="onSave()">Save</button>
+      <button class="SaveBTN" (click)="onSave()">SAVE</button>
     </div>
   </div>
   <div class="AboutCont">
@@ -33,8 +33,12 @@
       <div class="PenSmallLine"></div>
       <div class="PenTip"></div>
     </button>
-    <p class="BodyText">My name is Baxter, i'm 5 yo.</p>
-    <button class="EditBTN Body" *ngIf="currentView === Creator">
+    <p class="BodyText" *ngIf="!editBodyFields">{{ creator.body }}</p>
+    <button
+      class="EditBTN Body"
+      (click)="onEditBody()"
+      *ngIf="currentView === Creator && !editBodyFields"
+    >
       <div class="PenSide"></div>
       <div class="PenMid"></div>
       <div class="PenSide"></div>
@@ -43,6 +47,14 @@
       <div class="PenSmallLine"></div>
       <div class="PenTip"></div>
     </button>
+    <div *ngIf="editBodyFields" class="EditMode">
+      <textarea
+        class="BigTextarea"
+        type="text"
+        [(ngModel)]="creator.body"
+      ></textarea>
+      <button class="SaveBTN" (click)="onSave()">SAVE</button>
+    </div>
   </div>
   <div class="FormCont">
     <button class="ContactMeBTN" (click)="showFormFields = !showFormFields">

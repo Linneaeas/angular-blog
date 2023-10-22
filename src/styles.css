@@ -85,7 +85,7 @@ input:hover,
 textarea:hover,
 label:hover {
   cursor: pointer;
-  scale: 110%;
+  scale: 105%;
 }
 .SmallInput {
   height: 1.5rem;
@@ -112,7 +112,7 @@ label:hover {
   padding: 0.3rem;
 }
 .BigTextarea {
-  height: 15rem;
+  height: 20rem;
   width: 15rem;
   background: var(--boxShadow);
   padding: 0.3rem;

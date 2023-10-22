@@ -35,17 +35,26 @@ export class AboutMeComponent  {
   }
   
 /*EDIT MODE*/
-showEditMode: boolean = false;
-editField: 'firstName'| 'lastName' | 'image' | 'body' | null = null;
+editNameFields: boolean = false;
+editBodyFields: boolean = false;
+editImage: boolean = false;
 
-
-onEdit(field: 'firstName'| 'lastName' | 'image' | 'body') {
-  this.showEditMode = true;
-  this.editField = field;
+onEditName() {
+  this.editNameFields = true;
 }
 
+onEditBody() {
+  this.editBodyFields = true;
+}
+onEditImage() {
+  this.editImage = true;
+}
+
+
 onSave() {
-  this.showEditMode = false;
+  this.editNameFields = false;
+  this.editBodyFields = false;
+  this.editImage = false;
   this.localStorageService.set('creatorData', this.creator);
 }
 

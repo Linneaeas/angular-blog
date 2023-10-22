@@ -6,9 +6,22 @@
   box-shadow: 3px 3px 3px 3px var(--boxShadow);
   border-radius: 15px;
 }
+
 .AboutTitleCont {
   display: flex;
   gap: 1rem;
+}
+.EditMode {
+  display: flex;
+  gap: 1rem;
+}
+.SaveBTN {
+  max-height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primaryDark);
+  color: white;
 }
 .AboutPic {
   height: 300px;
