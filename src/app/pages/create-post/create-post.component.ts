@@ -19,6 +19,7 @@ export class CreatePostComponent {
   dislikes:0,
   comments:[]
 };
+tagInput: string = '';
 
   constructor(private localStorageService: LocalStorageService) {}
 
@@ -40,7 +41,8 @@ export class CreatePostComponent {
     if (!this.post.thumbnailUrl) {
       return;
     }
-    this.post.id = Date.now().toString() + Math.floor(Math.random() * 1000);
+    this.post.id = Date.now().toString() + Math.floor(Math.random() * 10);
+    this.post.tags = this.tagInput.split(',').map((tag) => tag.trim());
     
     const newPost: Post = {
       id:this.post.id,
@@ -71,5 +73,6 @@ export class CreatePostComponent {
       dislikes: 0,
       comments: []
     };
+    this.tagInput = ''; 
   }
 }

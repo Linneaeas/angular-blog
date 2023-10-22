@@ -63,7 +63,7 @@ export class BlogPostComponent implements OnInit {
 
   addComment() {
     if (this.newComment.text && this.newComment.name) {
-      this.newComment.id = Date.now().toString() + Math.floor(Math.random() * 1000);
+      this.newComment.id = Date.now().toString() + Math.floor(Math.random() * 10);
       this.post.comments.push(this.newComment);
       this.updatePostInLocalStorage();
       this.newComment = {
