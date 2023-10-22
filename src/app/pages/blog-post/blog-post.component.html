@@ -3,62 +3,41 @@
   <div class="BlogPostCont">
     <section class="BlogPostContent">
       <div class="PicBodyTags">
-        <img class="PostPic" src="../../../assets/baxi.png" />
+        <img class="PostPic" [src]="post.thumbnailUrl" alt="Post Image" />
         <div class="BodyTags">
-          <p class="BodyText">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac
-            auctor augue mauris augue. Ultricies mi eget mauris pharetra et
-            ultrices. Enim sed faucibus turpis in eu. A diam sollicitudin tempor
-            id. Risus in hendrerit gravida rutrum quisque. Commodo viverra
-            maecenas accumsan lacus vel facilisis. Id neque aliquam vestibulum
-            morbi blandit cursus risus at. Enim diam vulputate ut pharetra. In
-            dictum non consectetur a erat nam at lectus urna. Viverra vitae
-            congue eu consequat ac felis. Euismod in pellentesque massa placerat
-            duis ultricies lacus sed turpis. In cursus turpis massa tincidunt
-            dui ut ornare. Non diam phasellus vestibulum lorem sed risus
-            ultricies. Ut faucibus pulvinar elementum integer enim neque
-            volutpat ac tincidunt.
-          </p>
-          <p class="PostTags">Tags</p>
+          <p class="BodyText">{{ post.body }}</p>
+          <p class="PostTags">{{ post.tags }}</p>
         </div>
       </div>
     </section>
     <section class="Interactions">
       <div class="Reactions">
         <div class="React">
-          <button class="LikeBTN">
+          <button class="LikeBTN" (click)="increaseLikes()">
             <div class="Heart One"></div>
             <div class="Heart Two"></div>
           </button>
-          <span class="NoOf Like">55</span>
+          <span class="NoOf Like">{{ post.likes }}</span>
         </div>
         <div class="React">
-          <button class="DontLikeBTN">X</button>
-          <span class="NoOf DontLike">3</span>
+          <button class="DontLikeBTN" (click)="increaseDislikes()">X</button>
+          <span class="NoOf DontLike">{{ post.dislikes }}</span>
         </div>
       </div>
       <div class="Comments">
-        <div class="OneComment">
-          <p class="Comment">This is a comment</p>
-          <span class="CommentName">Prince</span>
-        </div>
-        <div class="OneComment">
-          <p class="Comment">Anotheeeer comment</p>
-          <span class="CommentName">Zimba</span>
-        </div>
-        <div class="OneComment">
-          <p class="Comment">A third one!!</p>
-          <span class="CommentName">Svullo</span>
+        <div class="OneComment" *ngFor="let comment of post.comments">
+          <p class="Comment">{{ comment.text }}</p>
+          <span class="CommentName">{{ comment.name }}</span>
         </div>
 
-        <form class="NewComment">
+        <form class="NewComment" (ngSubmit)="addComment()">
           <input
             class="BiggerInput"
             type="text"
             id="comment"
             name="comment"
             placeholder="Comment.."
+            [(ngModel)]="newComment.text"
           />
           <input
             class="XSInput"
@@ -66,6 +45,7 @@
             id="name"
             name="name"
             placeholder="Name.."
+            [(ngModel)]="newComment.name"
           />
           <input
             class="AddCommentBTN"
