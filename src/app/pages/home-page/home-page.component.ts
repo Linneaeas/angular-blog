@@ -14,6 +14,7 @@ export class HomePageComponent implements OnInit {
   Creator = ViewType.Creator;
   User = ViewType.User;
   posts: Post[] = [];
+  
 
   constructor(
     private viewStateService: ViewStateService,

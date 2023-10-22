@@ -1,7 +1,13 @@
 <main class="AboutPage">
   <div class="AboutTitleCont">
-    <h1 class="AboutTitle">Baxter Sjoberg</h1>
-    <button class="EditBTN Name">
+    <h1 class="AboutTitle" *ngIf="!showEditMode">
+      {{ creator.firstName }} {{ creator.lastName }}
+    </h1>
+    <button
+      class="EditBTN Name"
+      *ngIf="currentView === Creator"
+      (click)="onEdit('firstName')"
+    >
       <div class="PenSide"></div>
       <div class="PenMid"></div>
       <div class="PenSide"></div>
@@ -10,10 +16,15 @@
       <div class="PenSmallLine"></div>
       <div class="PenTip"></div>
     </button>
+    <div *ngIf="showEditMode">
+      <input class="SmallInput" type="text" [(ngModel)]="creator.firstName" />
+      <input class="SmallInput" type="text" [(ngModel)]="creator.lastName" />
+      <button (click)="onSave()">Save</button>
+    </div>
   </div>
   <div class="AboutCont">
     <img class="AboutPic" src="../../../assets/baxi.png" />
-    <button class="EditBTN Picture">
+    <button class="EditBTN Picture" *ngIf="currentView === Creator">
       <div class="PenSide"></div>
       <div class="PenMid"></div>
       <div class="PenSide"></div>
@@ -23,7 +34,7 @@
       <div class="PenTip"></div>
     </button>
     <p class="BodyText">My name is Baxter, i'm 5 yo.</p>
-    <button class="EditBTN Body">
+    <button class="EditBTN Body" *ngIf="currentView === Creator">
       <div class="PenSide"></div>
       <div class="PenMid"></div>
       <div class="PenSide"></div>
