@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-me.component.css']
 })
 export class AboutMeComponent {
+   /*EDIT MODE*/
+
+   
+  /*CONTACT ME FORM*/
 showFormFields: boolean = false;
 firstName: string = '';
 lastName: string = '';
