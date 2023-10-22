@@ -1,9 +1,8 @@
-import { Component,  OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ViewStateService, ViewType } from 'src/app/view-state.service';
-import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/local-storage.service';
-
+import { Post } from 'src/app/post';
 
 @Component({
   selector: 'app-home-page',
@@ -12,16 +11,20 @@ import { LocalStorageService } from 'src/app/local-storage.service';
 })
 export class HomePageComponent implements OnInit {
   currentView!: ViewType;
-  Creator = ViewType.Creator; 
-  User = ViewType.User;  
-  posts: any[] = []; 
+  Creator = ViewType.Creator;
+  User = ViewType.User;
+  posts: Post[] = [];
 
-  constructor(private viewStateService: ViewStateService, private router: Router, private localStorageService: LocalStorageService) {
-    this.viewStateService.currentView$.subscribe(view => {
+  constructor(
+    private viewStateService: ViewStateService,
+    private router: Router,
+    private localStorageService: LocalStorageService
+  ) {
+    this.viewStateService.currentView$.subscribe((view) => {
       this.currentView = view;
     });
   }
-  
+
   toggleView() {
     this.currentView = this.currentView === ViewType.Creator ? ViewType.User : ViewType.Creator;
     this.viewStateService.setCurrentView(this.currentView);
@@ -32,16 +35,21 @@ export class HomePageComponent implements OnInit {
     this.currentView = this.viewStateService.getCurrentView();
     this.posts = this.getSavedPostData() || [];
   }
+
   createNewPost() {
     this.router.navigate(['/CreatePost']);
   }
-  blogPost() {
-    this.router.navigate(['/BlogPost']);
+
+  navigateToPost(postId: string) {
+    this.router.navigate(['/BlogPost', postId]);
   }
+
   get viewType() {
     return this.viewStateService.getCurrentView();
   }
+
   getSavedPostData() {
     return this.localStorageService.get('posts');
   }
 }
+

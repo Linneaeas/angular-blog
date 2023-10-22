@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LocalStorageService } from 'src/app/local-storage.service';
+import { Post } from 'src/app/post';
 
 @Component({
   selector: 'app-create-post',
@@ -7,44 +8,68 @@ import { LocalStorageService } from 'src/app/local-storage.service';
   styleUrls: ['./create-post.component.css']
 })
 export class CreatePostComponent {
-  postTitle: string = '';
-  postBody: string = '';
-  postTags: string = '';
-  postPic: File | null = null;
-  imageUrl: string = '';
+  post: Post = {
+  id: '',
+  title:'',
+  body:'',
+  tags:[],
+  thumbnailUrl:'',
+  creationDate: new Date(),
+  likes: 0,
+  dislikes:0,
+  comments:[]
+};
 
   constructor(private localStorageService: LocalStorageService) {}
 
   handleFileInput(event: any) {
     const files: FileList = event.target.files;
+
     if (files.length > 0) {
-      this.postPic = files[0];
-      this.imageUrl = URL.createObjectURL(this.postPic); 
+      const file = files[0];
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        this.post.thumbnailUrl = reader.result as string;
+      };
+
+      reader.readAsDataURL(file);
     }
   }
-
   onSubmit() {
-    if (!this.postPic) {
+    if (!this.post.thumbnailUrl) {
       return;
     }
-
-    const newPost = {
-      postTitle: this.postTitle,
-      postBody: this.postBody,
-      postTags: this.postTags,
-      postPic: this.imageUrl,
+    this.post.id = Date.now().toString() + Math.floor(Math.random() * 1000);
+    
+    const newPost: Post = {
+      id:this.post.id,
+      title: this.post.title,
+      body: this.post.body,
+      tags: this.post.tags,
+      thumbnailUrl: this.post.thumbnailUrl,
+      creationDate: this.post.creationDate,
+      likes: this.post.likes,
+      dislikes: this.post.dislikes,
+      comments: this.post.comments
     };
     
-    let posts: any[] = this.localStorageService.get('posts') || [];
+    let posts: Post[] = this.localStorageService.get('posts') || [];
     posts.push(newPost);
-
+  
     this.localStorageService.set('posts', posts);
-
-    this.postTitle = '';
-    this.postBody = '';
-    this.postTags = '';
-    this.postPic = null;
-    this.imageUrl = '';
+  
+    
+    this.post = {
+      id:'',
+      title: '',
+      body: '',
+      tags: [],
+      thumbnailUrl: '',
+      creationDate: new Date(),
+      likes: 0,
+      dislikes: 0,
+      comments: []
+    };
   }
 }
-
