@@ -3,6 +3,7 @@ import { LocalStorageService } from 'src/app/local-storage.service';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/post';
 import { Comment } from 'src/app/comment';
+import { ViewType, ViewStateService } from 'src/app/view-state.service';
 
 
 @Component({
@@ -11,6 +12,9 @@ import { Comment } from 'src/app/comment';
   styleUrls: ['./blog-post.component.css']
 })
 export class BlogPostComponent implements OnInit {
+  currentView!: ViewType;
+  Creator = ViewType.Creator;
+  User = ViewType.User;
   post: Post = {
     id: '',
     title:'',
@@ -29,9 +33,14 @@ export class BlogPostComponent implements OnInit {
   };
 
   constructor(
+    private viewStateService: ViewStateService,
     private route: ActivatedRoute,
     private localStorageService: LocalStorageService
-  ) {}
+  ){
+    this.viewStateService.currentView$.subscribe((view) => {
+      this.currentView = view;
+    });
+  }
 
   ngOnInit() {
 
@@ -48,6 +57,29 @@ export class BlogPostComponent implements OnInit {
       this.post.dislikes = this.post.dislikes || 0;
     }
   }
+  /*EDIT MODE*/
+editTitleField: boolean = false;
+editBodyField: boolean = false;
+
+
+onEditTitle() {
+  this.editTitleField = true;
+}
+onEditBody() {
+  this.editBodyField = true;
+}
+onDeleteComment() {
+}
+onDeletePost() {
+}
+
+onSave() {
+  this.editTitleField = false;
+  this.editBodyField = false;
+  
+  this.updatePostInLocalStorage();
+}
+
   increaseLikes() {
     if (this.post) {
       this.post.likes++;

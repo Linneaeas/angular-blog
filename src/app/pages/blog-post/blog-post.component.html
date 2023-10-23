@@ -1,10 +1,58 @@
 <main class="BlogPost">
-  <h1 class="PostTitle">My post title</h1>
+  <div class="TitleCont">
+    <h1 class="PostTitle" *ngIf="!editTitleField">{{ post.title }}</h1>
+    <button
+      *ngIf="currentView === Creator && !editTitleField"
+      (click)="onEditTitle()"
+      class="EditBTN"
+    >
+      <div class="PenSide"></div>
+      <div class="PenMid"></div>
+      <div class="PenSide"></div>
+      <div class="PenSideAngle One"></div>
+      <div class="PenSideAngle Two"></div>
+      <div class="PenSmallLine"></div>
+      <div class="PenTip"></div>
+    </button>
+    <div *ngIf="editTitleField" class="EditMode">
+      <input class="SmallInput" type="text" [(ngModel)]="post.title" />
+      <button class="SaveBTN" (click)="onSave()">SAVE</button>
+    </div>
+  </div>
+  <button
+    *ngIf="currentView === Creator"
+    class="DeleteBTN"
+    (click)="onDeletePost()"
+  >
+    DELETE POST
+  </button>
   <div class="BlogPostCont">
     <section class="BlogPostContent">
       <div class="PicBody">
         <img class="PostPic" [src]="post.thumbnailUrl" alt="Post Image" />
-        <p class="BodyText">{{ post.body }}</p>
+
+        <p class="BodyText" *ngIf="!editBodyField">{{ post.body }}</p>
+        <button
+          *ngIf="currentView === Creator && !editBodyField"
+          (click)="onEditBody()"
+          class="EditBTN"
+        >
+          <div class="PenSide"></div>
+          <div class="PenMid"></div>
+          <div class="PenSide"></div>
+          <div class="PenSideAngle One"></div>
+          <div class="PenSideAngle Two"></div>
+          <div class="PenSmallLine"></div>
+          <div class="PenTip"></div>
+        </button>
+        <div *ngIf="editBodyField" class="EditMode">
+          <textarea
+            class="BigTextarea"
+            type="text"
+            [(ngModel)]="post.body"
+          ></textarea>
+          <button class="SaveBTN" (click)="onSave()">SAVE</button>
+        </div>
       </div>
       <div class="Tags">
         <p class="Tag" *ngFor="let tag of post.tags; let last = last">
@@ -28,6 +76,13 @@
       </div>
       <div class="Comments">
         <div class="OneComment" *ngFor="let comment of post.comments">
+          <button
+            *ngIf="currentView === Creator"
+            class="DeleteBTN"
+            (click)="onDeleteComment()"
+          >
+            X
+          </button>
           <p class="Comment">{{ comment.text }}</p>
           <span class="CommentName">{{ comment.name }}</span>
         </div>

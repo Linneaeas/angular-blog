@@ -4,6 +4,10 @@
   flex-wrap: wrap;
   gap: 2rem;
 }
+.TitleCont {
+  display: flex;
+  gap: 1rem;
+}
 .BlogPostContent {
   display: flex;
   justify-content: center;
