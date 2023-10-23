@@ -8,6 +8,10 @@
   display: flex;
   gap: 1rem;
 }
+.EditMode {
+  display: flex;
+  gap: 1rem;
+}
 .BlogPostContent {
   display: flex;
   justify-content: center;
@@ -133,4 +137,33 @@
 .NoOf.DontLike {
   font-size: 15px;
   margin-left: -5px;
+}
+.BackBTN {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin: 1rem;
+  padding-left: 2px;
+}
+.BackLine {
+  background: var(--fontShadow);
+  width: 20px;
+  height: 10px;
+  border-radius: 0 5px 5px 0;
+}
+.BackTri {
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-top: 12px solid var(--fontShadow);
+  transform: rotate(90deg);
+  margin-right: -5.2px;
+}
+.BackBTN:hover > .BackLine {
+  background: var(--primaryDark);
+  border-left: 1px solid var(--primaryDark);
+  margin-left: -1px;
+}
+.BackBTN:hover > .BackTri {
+  border-top: 12px solid var(--primaryDark);
 }

@@ -1,4 +1,13 @@
 <div *ngIf="deleted" class="Deleted">This Post have been deleted</div>
+<button
+  class="BackBTN"
+  routerLink="/Home"
+  routerLinkActive="active"
+  ariaCurrentWhenActive="page"
+>
+  <div class="BackTri"></div>
+  <div class="BackLine"></div>
+</button>
 <main *ngIf="!deleted" class="BlogPost">
   <div class="TitleCont">
     <h1 class="PostTitle" *ngIf="!editTitleField">{{ post.title }}</h1>
