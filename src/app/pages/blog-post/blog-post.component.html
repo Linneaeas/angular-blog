@@ -1,4 +1,5 @@
-<main class="BlogPost">
+<div *ngIf="deleted" class="Deleted">This Post have been deleted</div>
+<main *ngIf="!deleted" class="BlogPost">
   <div class="TitleCont">
     <h1 class="PostTitle" *ngIf="!editTitleField">{{ post.title }}</h1>
     <button
@@ -79,7 +80,7 @@
           <button
             *ngIf="currentView === Creator"
             class="DeleteBTN"
-            (click)="onDeleteComment()"
+            (click)="onDeleteComment(comment)"
           >
             X
           </button>

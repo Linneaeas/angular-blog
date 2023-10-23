@@ -60,6 +60,7 @@ export class BlogPostComponent implements OnInit {
   /*EDIT MODE*/
 editTitleField: boolean = false;
 editBodyField: boolean = false;
+deleted: boolean = false;
 
 
 onEditTitle() {
@@ -68,9 +69,30 @@ onEditTitle() {
 onEditBody() {
   this.editBodyField = true;
 }
-onDeleteComment() {
+onDeleteComment(comment: Comment) {
+  if (this.post) {
+    if (window.confirm('Are you sure you want to delete this comment?')) {
+    const commentIndex = this.post.comments.indexOf(comment);
+    if (commentIndex !== -1) {
+      this.post.comments.splice(commentIndex, 1);
+      this.updatePostInLocalStorage();
+    }
+  }
 }
+}
+
 onDeletePost() {
+  if (this.post) {
+    if (window.confirm('Are you sure you want to delete this post?')) {
+    const posts: Post[] = this.localStorageService.get('posts') || [];
+    const postIndex = posts.findIndex((p) => p.id === this.post.id);
+    if (postIndex !== -1) {
+      posts.splice(postIndex, 1);
+      this.localStorageService.set('posts', posts);
+      this.deleted = true; 
+    }
+    }
+  }
 }
 
 onSave() {
