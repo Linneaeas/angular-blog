@@ -4,10 +4,7 @@
   flex-direction: column;
   gap: 1rem;
 }
-.PostBTN {
-  background: var(--primaryDark);
-  color: white;
-}
+
 .Hidden {
   position: absolute;
   top: -1000px;

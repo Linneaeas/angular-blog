@@ -14,32 +14,41 @@
   box-shadow: 3px 3px 3px 3px var(--boxShadow);
   border-radius: 15px;
 }
-.PicBodyTags {
+.PicBody {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
-  width: fit-content;
+}
+.BodyText {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 25rem;
 }
 .PostPic {
   max-width: 20rem;
   object-fit: contain;
 }
-.BodyTags {
+
+.Tags {
   display: flex;
   flex-wrap: wrap;
-  max-width: 20rem;
+  gap: 5px;
+}
+.Tag {
+  display: flex;
+  flex-wrap: wrap;
 }
 .Interactions {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 .Reactions {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 15rem;
+  gap: 16rem;
   margin-top: -1rem;
 }
 .React {
@@ -120,9 +129,4 @@
 .NoOf.DontLike {
   font-size: 15px;
   margin-left: -5px;
-}
-
-.AddCommentBTN {
-  background: var(--primaryDark);
-  color: white;
 }

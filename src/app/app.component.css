@@ -32,8 +32,11 @@ a:hover {
   font-size: 1.5rem;
   color: var(--primaryLight);
 }
+
+/*TOGGLE BUTTON*/
 .ToggleBTN {
   box-shadow: none;
+  max-height: fit-content;
 }
 .Eye {
   height: 40px;
@@ -63,7 +66,6 @@ a:hover {
 .Round.View {
   transform: rotate(-20deg);
 }
-
 .Dot {
   background: var(--eyePrimary);
   height: 9px;
@@ -71,7 +73,6 @@ a:hover {
   border-radius: 100%;
   border: 2px solid var(--eyeBorder);
 }
-
 .Current {
   color: var(--eyePrimary);
   font-size: 10px;

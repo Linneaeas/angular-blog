@@ -51,25 +51,6 @@ h3 {
 .BodyText {
   color: black;
 }
-/*BUTTONS*/
-button,
-input[type="submit"] {
-  background: none;
-  border: none;
-  border-radius: 20px;
-  font-weight: bolder;
-  font-size: 1rem;
-  padding: 0.5rem;
-  box-shadow: 2px 2px 2px 2px var(--boxShadow);
-  width: fit-content;
-  color: var(--primaryDark);
-}
-button:hover,
-input[type="submit"]:hover {
-  cursor: pointer;
-  scale: 110%;
-  box-shadow: 3px 3px 3px 3px var(--boxShadow);
-}
 
 /*INPUTS & TEXTAREAS*/
 input,
@@ -87,15 +68,15 @@ label:hover {
   cursor: pointer;
   scale: 105%;
 }
-.SmallInput {
-  height: 1.5rem;
-  width: 8rem;
-  background: var(--boxShadow);
-  padding: 0.3rem;
-}
 .XSInput {
   height: 1.5rem;
   width: 4rem;
+  background: var(--boxShadow);
+  padding: 0.3rem;
+}
+.SmallInput {
+  height: 1.5rem;
+  width: 8rem;
   background: var(--boxShadow);
   padding: 0.3rem;
 }
@@ -116,4 +97,97 @@ label:hover {
   width: 15rem;
   background: var(--boxShadow);
   padding: 0.3rem;
+}
+/*BUTTONS*/
+button {
+  background: none;
+  border: none;
+  border-radius: 20px;
+  font-weight: bolder;
+  font-size: 1rem;
+  max-height: 2rem;
+  padding: 0.5rem;
+  box-shadow: 2px 2px 2px 2px var(--boxShadow);
+  width: fit-content;
+  color: var(--primaryDark);
+}
+button:hover,
+input[type="submit"]:hover {
+  cursor: pointer;
+  scale: 110%;
+  box-shadow: 3px 3px 3px 3px var(--boxShadow);
+}
+/*SAVE BUTTON*/
+.SaveBTN,
+input[type="submit"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primaryDark);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 20px;
+  font-weight: bolder;
+  font-size: 1rem;
+}
+/*EDIT BUTTON*/
+.EditBTN {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  width: 15px;
+  border-radius: 4px 4px 50% 50%;
+  padding: 0;
+  border-top: 9px solid var(--primaryDark);
+  transform: rotate(45deg);
+  box-shadow: 1px 1px 1px 1px var(--boxShadow);
+  gap: 12px;
+}
+.EditBTN.Picture,
+.EditBTN.Body {
+  margin-top: -1.5rem;
+}
+.PenSide {
+  height: 20px;
+  width: 1.5px;
+  background: var(--primaryDark);
+}
+.PenMid {
+  height: 20px;
+  width: 2px;
+  border-right: 1px solid var(--primaryDark);
+  border-left: 1px solid var(--primaryDark);
+  position: absolute;
+}
+.PenSideAngle {
+  position: absolute;
+  height: 12px;
+  width: 1.5px;
+  background: var(--primaryDark);
+  margin-top: 20px;
+}
+.PenSideAngle.One {
+  transform: rotate(28deg);
+  margin-left: 7px;
+}
+.PenSideAngle.Two {
+  transform: rotate(-28deg);
+  margin-right: 8px;
+}
+.PenTip {
+  margin-top: 27px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 7px solid var(--primaryDark);
+  position: absolute;
+}
+.PenSmallLine {
+  margin-top: 20px;
+  width: 15px;
+  height: 1px;
+  background: var(--primaryDark);
+  position: absolute;
+}
+.EditBTN:hover {
+  box-shadow: 1.5px 1.5px 1.5px 1.5px var(--boxShadow);
 }

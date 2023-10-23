@@ -2,12 +2,14 @@
   <h1 class="PostTitle">My post title</h1>
   <div class="BlogPostCont">
     <section class="BlogPostContent">
-      <div class="PicBodyTags">
+      <div class="PicBody">
         <img class="PostPic" [src]="post.thumbnailUrl" alt="Post Image" />
-        <div class="BodyTags">
-          <p class="BodyText">{{ post.body }}</p>
-          <p class="PostTags">{{ post.tags }}</p>
-        </div>
+        <p class="BodyText">{{ post.body }}</p>
+      </div>
+      <div class="Tags">
+        <p class="Tag" *ngFor="let tag of post.tags; let last = last">
+          #{{ tag }}
+        </p>
       </div>
     </section>
     <section class="Interactions">
@@ -48,7 +50,7 @@
             [(ngModel)]="newComment.name"
           />
           <input
-            class="AddCommentBTN"
+            class="SaveBTN"
             type="submit"
             name="addComment"
             id="addComment"
