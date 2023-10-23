@@ -61,6 +61,7 @@ onSave() {
 
  /*CONTACT ME FORM*/
 showFormFields: boolean = false;
+sent: boolean=false;
 firstName: string = '';
 lastName: string = '';
 email: string = '';
@@ -71,11 +72,13 @@ onSubmit() {
   console.log('Last Name:', this.lastName);
   console.log('Email:', this.email);
   console.log('Message:', this.message);
+  
 
   this.firstName = '';
   this.lastName = '';
   this.email = '';
   this.message = '';
   this.showFormFields=false;
+  this.sent=true;
 }
 }

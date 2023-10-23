@@ -56,7 +56,11 @@
       <button class="SaveBTN" (click)="onSave()">SAVE</button>
     </div>
   </div>
+
   <div class="FormCont">
+    <div *ngIf="sent" class="Confirm">
+      Thank you for your message! I will answer you as soon as possible!
+    </div>
     <button class="ContactMeBTN" (click)="showFormFields = !showFormFields">
       CONTACT ME HERE
     </button>
