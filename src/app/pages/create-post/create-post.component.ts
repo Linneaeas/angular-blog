@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from 'src/app/local-storage.service';
 import { Post } from 'src/app/post';
+import { ViewType, ViewStateService } from 'src/app/view-state.service';
 
 @Component({
   selector: 'app-create-post',
@@ -8,6 +9,9 @@ import { Post } from 'src/app/post';
   styleUrls: ['./create-post.component.css']
 })
 export class CreatePostComponent {
+  currentView!: ViewType;
+  Creator = ViewType.Creator;
+  User = ViewType.User;
   post: Post = {
   id: '',
   title:'',
@@ -21,7 +25,9 @@ export class CreatePostComponent {
 };
 tagInput: string = '';
 
-  constructor(private localStorageService: LocalStorageService) {}
+  constructor(private localStorageService: LocalStorageService, private viewStateService: ViewStateService) {   this.viewStateService.currentView$.subscribe((view) => {
+    this.currentView = view;
+  });}
 
   handleFileInput(event: any) {
     const files: FileList = event.target.files;

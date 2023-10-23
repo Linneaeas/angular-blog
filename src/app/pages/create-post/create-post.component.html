@@ -1,4 +1,7 @@
-<main class="CreateNewPost">
+<div *ngIf="currentView === User" class="NoAccess">
+  You don't have access to this page
+</div>
+<main *ngIf="currentView === Creator" class="CreateNewPost">
   <h1 class="AboutTitle">Create new post</h1>
   <div class="NewPostCont">
     <form class="NewPostForm">
