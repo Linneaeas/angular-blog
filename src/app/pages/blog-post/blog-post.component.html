@@ -1,4 +1,4 @@
-<div *ngIf="deleted" class="Deleted">This Post have been deleted</div>
+<div class="Deleted" *ngIf="deleted">This Post have been deleted</div>
 <button
   class="BackBTN"
   routerLink="/Home"
@@ -8,13 +8,14 @@
   <div class="BackTri"></div>
   <div class="BackLine"></div>
 </button>
-<main *ngIf="!deleted" class="BlogPost">
+
+<main class="BlogPost" *ngIf="!deleted">
   <div class="TitleCont">
     <h1 class="PostTitle" *ngIf="!editTitleField">{{ post.title }}</h1>
     <button
+      class="EditBTN"
       *ngIf="currentView === Creator && !editTitleField"
       (click)="onEditTitle()"
-      class="EditBTN"
     >
       <div class="PenSide"></div>
       <div class="PenMid"></div>
@@ -24,14 +25,14 @@
       <div class="PenSmallLine"></div>
       <div class="PenTip"></div>
     </button>
-    <div *ngIf="editTitleField" class="EditMode">
+    <div class="EditMode" *ngIf="editTitleField">
       <input class="SmallInput" type="text" [(ngModel)]="post.title" />
       <button class="SaveBTN" (click)="onSave()">SAVE</button>
     </div>
   </div>
   <button
-    *ngIf="currentView === Creator"
     class="DeleteBTN"
+    *ngIf="currentView === Creator"
     (click)="onDeletePost()"
   >
     DELETE POST
@@ -42,6 +43,7 @@
         <img class="PostPic" [src]="post.thumbnailUrl" alt="Post Image" />
 
         <p class="BodyText" *ngIf="!editBodyField">{{ post.body }}</p>
+
         <button
           *ngIf="currentView === Creator && !editBodyField"
           (click)="onEditBody()"
@@ -55,7 +57,8 @@
           <div class="PenSmallLine"></div>
           <div class="PenTip"></div>
         </button>
-        <div *ngIf="editBodyField" class="EditMode">
+
+        <div class="EditMode" *ngIf="editBodyField">
           <textarea
             class="BigTextarea"
             type="text"
@@ -72,14 +75,14 @@
     </section>
     <section class="Interactions">
       <div class="Reactions">
-        <div class="React">
+        <div class="LikeOrDont">
           <button class="LikeBTN" (click)="increaseLikes()">
             <div class="Heart One"></div>
             <div class="Heart Two"></div>
           </button>
           <span class="NoOf Like">{{ post.likes }}</span>
         </div>
-        <div class="React">
+        <div class="LikeOrDont">
           <button class="DontLikeBTN" (click)="increaseDislikes()">X</button>
           <span class="NoOf DontLike">{{ post.dislikes }}</span>
         </div>
@@ -87,13 +90,13 @@
       <div class="Comments">
         <div class="OneComment" *ngFor="let comment of post.comments">
           <button
-            *ngIf="currentView === Creator"
             class="DeleteBTN"
+            *ngIf="currentView === Creator"
             (click)="onDeleteComment(comment)"
           >
             X
           </button>
-          <p class="Comment">{{ comment.text }}</p>
+          <p class="CommentText">{{ comment.text }}</p>
           <span class="CommentName">{{ comment.name }}</span>
         </div>
 

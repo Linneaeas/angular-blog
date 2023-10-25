@@ -16,7 +16,7 @@
       <div class="PenSmallLine"></div>
       <div class="PenTip"></div>
     </button>
-    <div *ngIf="editNameFields" class="EditMode">
+    <div class="EditMode" *ngIf="editNameFields">
       <input class="SmallInput" type="text" [(ngModel)]="creator.firstName" />
       <input class="SmallInput" type="text" [(ngModel)]="creator.lastName" />
       <button class="SaveBTN" (click)="onSave()">SAVE</button>
@@ -24,7 +24,11 @@
   </div>
   <div class="AboutCont">
     <img class="AboutPic" src="../../../assets/baxi.png" />
-    <button class="EditBTN Picture" *ngIf="currentView === Creator">
+    <button
+      class="EditBTN Picture"
+      (click)="onEditImage()"
+      *ngIf="currentView === Creator"
+    >
       <div class="PenSide"></div>
       <div class="PenMid"></div>
       <div class="PenSide"></div>
@@ -47,7 +51,7 @@
       <div class="PenSmallLine"></div>
       <div class="PenTip"></div>
     </button>
-    <div *ngIf="editBodyFields" class="EditMode">
+    <div class="EditMode" *ngIf="editBodyFields">
       <textarea
         class="BigTextarea"
         type="text"
@@ -58,13 +62,13 @@
   </div>
 
   <div class="FormCont">
-    <div *ngIf="sent" class="Confirm">
+    <div class="Confirm" *ngIf="sent">
       Thank you for your message! I will answer you as soon as possible!
     </div>
     <button class="ContactMeBTN" (click)="showFormFields = !showFormFields">
       CONTACT ME HERE
     </button>
-    <form *ngIf="showFormFields" class="FormFields">
+    <form class="FormFields" *ngIf="showFormFields">
       <div class="Column">
         <input
           class="SmallInput"

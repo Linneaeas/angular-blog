@@ -48,6 +48,10 @@ h2,
 h3 {
   text-shadow: 3px 3px 3px var(--fontShadow);
 }
+.TitleCont {
+  display: flex;
+  gap: 1rem;
+}
 .BodyText {
   color: black;
 }
@@ -145,12 +149,12 @@ input[type="submit"] {
 .EditBTN {
   display: flex;
   justify-content: center;
-  height: 35px;
+  max-height: 37px;
   width: 15px;
   border-radius: 4px 4px 50% 50%;
   padding: 0;
   border-top: 9px solid var(--primaryDark);
-  transform: rotate(45deg);
+  transform: rotate(50deg);
   box-shadow: 1px 1px 1px 1px var(--boxShadow);
   gap: 12px;
 }
@@ -164,11 +168,12 @@ input[type="submit"] {
   background: var(--primaryDark);
 }
 .PenMid {
-  height: 20px;
+  height: 18px;
   width: 2px;
   border-right: 1px solid var(--primaryDark);
   border-left: 1px solid var(--primaryDark);
   position: absolute;
+  box-shadow: 1px 1px 1px 1px var(--boxShadow);
 }
 .PenSideAngle {
   position: absolute;
@@ -193,10 +198,13 @@ input[type="submit"] {
   position: absolute;
 }
 .PenSmallLine {
-  margin-top: 20px;
+  margin-top: 18.5px;
   width: 15px;
-  height: 1px;
-  background: var(--primaryDark);
+  height: 5px;
+  background: transparent;
+  border-top: 1px solid var(--primaryDark);
+
+  border-radius: 50%;
   position: absolute;
 }
 .EditBTN:hover {

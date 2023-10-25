@@ -1,7 +1,7 @@
-<div *ngIf="currentView === User" class="NoAccess">
+<div class="NoAccess" *ngIf="currentView === User">
   You don't have access to this page
 </div>
-<main *ngIf="currentView === Creator" class="CreateNewPost">
+<main class="CreateNewPost" *ngIf="currentView === Creator">
   <h1 class="AboutTitle">Create new post</h1>
   <div class="NewPostCont">
     <form class="NewPostForm">
@@ -42,15 +42,14 @@
         <span>IMG</span>
       </label>
       <img
+        class="PreviewPic"
         *ngIf="post.thumbnailUrl"
         [src]="post.thumbnailUrl"
         alt="Image Preview"
         height="100"
       />
 
-      <button class="SaveBTN" (click)="onSubmit(); $event.preventDefault()">
-        POST
-      </button>
+      <button class="SaveBTN" (click)="onSubmit()">POST</button>
     </form>
   </div>
 </main>
